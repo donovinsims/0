@@ -17,8 +17,8 @@ export default async function CalendarPage() {
   const startOfMonth = new Date(today.getFullYear(), today.getMonth(), 1)
   const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0)
 
-  const events = await getEvents(session.user.sub as string, startOfMonth, endOfMonth)
-  const categories = await getUserCategories(session.user.sub as string)
+  const events = await getEvents(session.user.id as string, startOfMonth, endOfMonth)
+  const categories = await getUserCategories(session.user.id as string)
 
   return (
     <div className="flex h-screen flex-col">

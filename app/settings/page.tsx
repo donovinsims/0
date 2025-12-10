@@ -12,7 +12,7 @@ export default async function SettingsPage() {
     redirect("/auth/signin")
   }
 
-  const preferences = await getUserPreferences(session.user.sub as string)
+  const preferences = await getUserPreferences(session.user.id as string)
 
   return (
     <div className="flex h-screen flex-col">
